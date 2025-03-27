@@ -245,6 +245,7 @@ ol>li::marker{
 }
 @media(max-width: 600px) {
     .nav-slider{
+        background-color: rgba(53,36,184,1);
         left: -100%;
         flex-direction: column;
 

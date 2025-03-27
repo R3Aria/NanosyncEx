@@ -47,15 +47,26 @@ nav{
 nav #nav-links{
     overflow: hidden;
 }
+#nav-links>h1{
+    margin: 1.5rem;
+    font-size: 2rem;
+}
 h1,h2{
     color: var(--toxic);
 }
-.nav-slider{
+#sidebar-active{
+    display: none;
+}
+.open-sidebar, .close-sidebar{
+    display: none;
+}
+.nav-slider {
+    display: flex;
     border-radius: 0rem 1rem 1rem 0rem;
     height: 100vh;
     background-color: var(--purple);
-    display: flex;
     flex-direction: column;
+    transition: all 0.5s ease; /* Smooth transition */
 }
 #nav-links{
     display: flex;
@@ -102,7 +113,7 @@ h1,h2{
     background-color: var(--purple);
     top: 3%;
     left: 95%;
-
+    
     cursor: pointer;
     border-radius: 1rem;
 }
@@ -140,6 +151,12 @@ h1,h2{
     justify-content: center;
     justify-content: center;
 }
+.contents:last-child{
+    margin-bottom: 5rem;
+}
+.contents:first-of-type{
+    margin-top: 5rem;
+}
 /* Cats page specific styles */
 th{
     background-color: var(--toxic);
@@ -173,14 +190,15 @@ section>#cats-table{
     width: 50%;
     height: 50%;
 }
-#cat-personailties>div{
+#cat-personalities div{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    margin: 1rem;
 }
-#cat-personalities:last-child{
-    margin-bottom: 5rem;
-}
+
 /* For Gaming */
 #Gaming-Section>*{
     margin: 1rem;
@@ -200,6 +218,17 @@ hr{
 ol>li::marker{
     color: var(--toxic);
 }
+#Art-Section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Art-Section>img{
+    width: 50%;
+    height: 50%;
+    margin: 1rem;
+}
 /* Anime Section */
 #Anime-Section>*{
     margin: 1rem;
@@ -207,4 +236,51 @@ ol>li::marker{
 #anime-pictures img{
     width: 50%;
     height: 50%;
+}
+#anime-pictures div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+@media(max-width: 600px) {
+    .nav-slider{
+        left: -100%;
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: 70vw;
+
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.7);
+        transition: .5s ease-out;
+    }
+    #nav-links>a{
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        
+        transition: all .5s;
+    }
+    .open-sidebar, .close-sidebar{
+        display: block;
+    }
+    .open-sidebar{
+        position: absolute;
+        top: 3%;
+        left: 30%;
+    }
+    .close-sidebar{
+        position: absolute;
+        top: 3%;
+        right: 5%;
+    }
+    #sidebar-active:checked ~ .nav-slider{
+        left: 0;
+        transition: all ease-in .5s;
+    }
+    #sidebar-active:checked ~ .open-sidebar{
+        display: none;
+    }
 }

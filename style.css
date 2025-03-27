@@ -1,0 +1,210 @@
+/* variables */
+:root{
+    --background: #1a1a1a;
+    --toxic: #32a852;
+    --text: 'Nunito','Lexend Deca', sans-serif;
+    --toxicPurple: #191622;
+    --purple: rgba(53,36,184,0.3);
+}
+*{
+    color: white;
+    font-family: var(--text);
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior:auto;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 100%;
+}
+a{
+    text-decoration: none;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* Navigation bar properties */
+nav{
+    /* border: 1px solid var(--toxic); */
+    border-radius: 0rem 1rem 1rem 0rem;
+    width: 20vw;
+    height: 100%;
+
+    position: fixed;
+    left: 0rem;
+    top: 0rem;
+    /* width: 100%; */
+    /* overflow: hidden; */
+    transition: 1s ease;
+}
+nav #nav-links{
+    overflow: hidden;
+}
+h1,h2{
+    color: var(--toxic);
+}
+.nav-slider{
+    border-radius: 0rem 1rem 1rem 0rem;
+    height: 100vh;
+    background-color: var(--purple);
+    display: flex;
+    flex-direction: column;
+}
+#nav-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* To modify the links in the nav bar */
+#nav-links>a{
+    width: 90%;
+    padding: 1rem;
+    overflow: hidden;
+    align-content: center;
+
+    transition: all .5s;
+}
+/* Nav bar hover state */
+#nav-links>a:hover{
+    background-color: var(--toxic);
+    box-shadow: inset -5px 5px 10px rgba(0,0,0,0.7);
+}
+.nav-slider>a{
+    width: 10vw;
+}
+.nav-slider>h1{
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+    font-size: 2rem;
+}
+.Active-link{
+    background-color: var(--toxic);
+}
+/* Nav bar sliding */
+#nav-toggle{
+    display: none;
+    visibility: hidden;
+}
+.toggle{
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    z-index: 0;
+    background-color: var(--purple);
+    top: 3%;
+    left: 95%;
+
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.profile{
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Spacing in profile */
+.profile>*{
+    margin: .5rem;
+}
+/* Glow aroud image */
+.profile img{
+    box-shadow: 0 0 30px #32a852;
+    border-radius: 100%;
+}
+.AboutMe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#center-text{
+    text-align: center;
+}
+.contents{
+    max-width: 55vw;
+    min-width: 50vw;
+
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+}
+/* Cats page specific styles */
+th{
+    background-color: var(--toxic);
+    padding: 1rem;
+}
+td{
+    background-color: var(--purple);
+    padding: 1rem;
+    text-align: center;
+}
+tr{
+    border-bottom: 1px solid white;
+}
+#pets-table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+table{
+    border-collapse:collapse;
+    width: 100%;
+}
+section>#cats-table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cat-personalities img{
+    width: 50%;
+    height: 50%;
+}
+#cat-personailties>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cat-personalities:last-child{
+    margin-bottom: 5rem;
+}
+/* For Gaming */
+#Gaming-Section>*{
+    margin: 1rem;
+}
+#Gaming-Images{
+    margin-bottom: 5rem;
+}
+#Gaming-Images>img{
+    width: 100%;
+    height: 50%;
+    margin: 1rem;
+}
+/* AboutMe */
+hr{
+    margin: 2rem;
+}
+ol>li::marker{
+    color: var(--toxic);
+}
+/* Anime Section */
+#Anime-Section>*{
+    margin: 1rem;
+}
+#anime-pictures img{
+    width: 50%;
+    height: 50%;
+}
